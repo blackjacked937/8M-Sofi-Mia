@@ -1,0 +1,4 @@
+Guarda tus fotos aquí (JPG, PNG o WEBP).
+Después abre config.js y escribe la ruta en cada objeto de "album".
+Ejemplo: foto: "assets/fotos/foto1.jpg"
+No necesitas poner una foto en cada espacio. El diseño funciona sin fotos.

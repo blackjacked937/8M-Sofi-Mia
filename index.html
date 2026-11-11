@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0c0d23">
+  <meta name="description" content="Una pequeña galaxia para celebrar ocho meses de una historia muy especial.">
+  <title>Ocho meses, nuestro infinito ✦</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+  <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+  <div class="ambient-glow glow-one" aria-hidden="true"></div>
+  <div class="ambient-glow glow-two" aria-hidden="true"></div>
+
+  <a href="#contenido" class="skip-link">Ir al contenido</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>nuestro <em>infinito</em></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#constelacion">Los 8 meses</a>
+      <a href="#album">Nuestro álbum</a>
+      <a href="#carta">La sorpresa</a>
+    </nav>
+    <div class="header-counter" aria-live="polite">
+      <span class="counter-sparkle">✧</span>
+      <span id="headerProgress">0 de 8</span>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero section-shell" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy" data-reveal>
+        <div class="eyebrow"><span class="eyebrow-dot"></span><span id="heroDate"> 11 DE NOVIEMBRE · NUESTROS 8 MESECITOS MI NIÑA HERMOSA</span></div>
+        <p class="tiny-intro">Para mi <span id="recipientHero">Sofi</span>, con todo mi cariño.</p>
+        <h1 id="hero-title">Ocho meses,<br><em>un infinito</em><br>por descubrir<span class="title-period">.</span></h1>
+        <p class="hero-description" id="heroDescription">Hay personas que llegan a nuestra vida y la convierten en un lugar más bonito. Esta pequeña galaxia existe para celebrar lo que hemos vivido.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#constelacion"><span>Comenzar nuestro viaje</span><span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#carta">O ir directo a la carta <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-bottom-line"><span class="tiny-line" aria-hidden="true"></span><span>8 meses · 8 estrellas · 1 historia</span></div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true" data-reveal>
+        <div class="universe-orbit orbit-outer"></div>
+        <div class="universe-orbit orbit-middle"></div>
+        <div class="universe-orbit orbit-inner"></div>
+        <div class="planet-center">
+          <div class="planet-light"></div>
+          <div class="planet-shadow"></div>
+          <span class="planet-heart">♡</span>
+        </div>
+        <span class="orbit-star star-a">✧</span><span class="orbit-star star-b">✦</span><span class="orbit-star star-c">✧</span>
+        <div class="floating-postcard postcard-top"><span>mi lugar favorito</span><strong>es contigo ♡</strong></div>
+        <div class="floating-postcard postcard-bottom"><span>nuestro pequeño universo</span><strong>08 / ∞</strong></div>
+        <div class="orbit-caption">una galaxia para dos</div>
+      </div>
+      <a href="#constelacion" class="scroll-hint" aria-label="Desplazarse a nuestros ocho meses"><span>DESLIZA PARA EXPLORAR</span><span class="scroll-arrow">↓</span></a>
+    </section>
+
+    <section class="constellation-section section-shell" id="constelacion" aria-labelledby="constellation-title">
+      <div class="section-heading" data-reveal>
+        <p class="section-kicker"><span>01</span> / EL VIAJE</p>
+        <h2 id="constellation-title">Ocho meses, <em>ocho estrellas.</em></h2>
+        <p>Dicen que las constelaciones se forman al unir puntos de luz. La nuestra se forma con momentos. Toca cada estrella para descubrir su historia.</p>
+      </div>
+      <div class="sky-frame" data-reveal>
+        <div class="sky-topline"><span>MAPA DE NUESTRA HISTORIA</span><span class="map-coordinates">✧ 08 LATIDOS EN EL CIELO</span></div>
+        <div class="constellation-map" id="constellationMap" role="group" aria-label="Mapa interactivo de ocho meses">
+          <svg id="constellationLines" class="constellation-lines" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="map-nebula nebula-one" aria-hidden="true"></div>
+          <div class="map-nebula nebula-two" aria-hidden="true"></div>
+        </div>
+        <div class="map-bottomline"><span><span class="legend-dot"></span> Estrellas por descubrir</span><span id="mapProgress">Has descubierto 0 de 8 recuerdos</span></div>
+      </div>
+      <div class="progress-wrap" data-reveal>
+        <div class="progress-label"><span>Tu recorrido por nuestra galaxia</span><strong id="progressPercent">0%</strong></div>
+        <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+        <p id="progressMessage" class="progress-footnote" aria-live="polite">Cada estrella guarda una parte de esta historia.</p>
+      </div>
+    </section>
+
+    <section class="album-section section-shell" id="album" aria-labelledby="album-title">
+      <div class="section-heading" data-reveal>
+        <p class="section-kicker"><span>02</span> / NUESTROS INSTANTES</p>
+        <h2 id="album-title">Hay instantes que <em>se quedan.</em></h2>
+        <p>No hace falta un día extraordinario para crear un recuerdo bonito. A veces basta una sonrisa, una conversación o simplemente estar juntos.</p>
+      </div>
+      <div class="album-panel" data-reveal>
+        <div class="album-visual">
+          <div class="photo-frame" id="photoFrame">
+            <div class="photo-illustration" id="photoIllustration"><span id="photoGlyph">☾</span><span class="photo-mini-star photo-mini-a">✦</span><span class="photo-mini-star photo-mini-b">✧</span></div>
+            <img id="albumImage" alt="" hidden>
+            <div class="photo-label" id="photoLabel">RECUERDO 01</div>
+          </div>
+          <div class="polaroid-note">cada foto cuenta<br>un pedacito de nosotros ♡</div>
+        </div>
+        <div class="album-copy">
+          <div class="album-count"><span>ÁLBUM DE MOMENTOS</span><span id="albumCount">01 — 04</span></div>
+          <span class="album-accent" aria-hidden="true">✳</span>
+          <h3 id="albumMomentTitle">Esos momentos sencillos</h3>
+          <p id="albumMomentDescription">A veces los momentos más pequeños terminan siendo los recuerdos más grandes.</p>
+          <div class="album-controls">
+            <button class="icon-button" id="albumPrev" type="button" aria-label="Foto anterior">←</button>
+            <div class="album-dots" id="albumDots" role="group" aria-label="Seleccionar recuerdo"></div>
+            <button class="icon-button" id="albumNext" type="button" aria-label="Foto siguiente">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter-section section-shell" id="carta" aria-labelledby="letter-title">
+      <div class="letter-background-star letter-background-star-1" aria-hidden="true">✦</div>
+      <div class="letter-background-star letter-background-star-2" aria-hidden="true">✳</div>
+      <div class="section-heading section-heading-center" data-reveal>
+        <p class="section-kicker"><span>04</span> / EL ÚLTIMO REGALO</p>
+        <h2 id="letter-title">Y si pudiera pedir <em>un deseo...</em></h2>
+        <p>Sería seguir llenando nuestras páginas de momentos que valgan la pena recordar. Antes de terminar, hay algo que quiero decirte.</p>
+      </div>
+      <div class="envelope-spot" data-reveal>
+        <button id="envelopeBtn" type="button" class="envelope-button" aria-label="Abrir carta de aniversario">
+          <span class="envelope-shadow"></span>
+          <span class="envelope-body"><span class="envelope-bottom"></span><span class="envelope-side-left"></span><span class="envelope-side-right"></span><span class="envelope-flap"></span><span class="wax-seal">♡</span></span>
+        </button>
+        <p class="envelope-instruction">Toca el sobre para abrir tu carta <span>↗</span></p>
+        <p class="envelope-extra" id="letterNudge">Puedes abrirla cuando quieras mi amorcito.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <div class="footer-heart">♡</div>
+    <p>Hecho con mucho cariño para <span id="recipientFooter">Sofia</span>.</p>
+    <p class="footer-signature">Ocho meses son solo el comienzo de muchas historias.</p>
+    <button class="reset-link" id="restartBtn" type="button">Volver a recorrer las estrellas ↺</button>
+  </footer>
+
+  <dialog id="chapterDialog" class="story-dialog" aria-labelledby="chapterTitle">
+    <div class="dialog-inner">
+      <button class="dialog-close" id="chapterClose" type="button" aria-label="Cerrar recuerdo">×</button>
+      <div class="dialog-starburst" aria-hidden="true">✧</div>
+      <p class="dialog-kicker" id="chapterKicker">ESTRELLA 01 · ABRIL</p>
+      <span class="dialog-icon" id="chapterIcon">☾</span>
+      <h2 id="chapterTitle">El inicio de algo bonito</h2>
+      <p class="dialog-text" id="chapterText"></p>
+      <div class="dialog-quote"><span>“</span><p id="chapterQuote"></p></div>
+      <div class="dialog-bottom"><span id="chapterSaved">✦ Recuerdo guardado en nuestro cielo</span><button class="btn btn-small" id="nextChapter" type="button">Siguiente estrella <span aria-hidden="true">↗</span></button></div>
+    </div>
+  </dialog>
+
+  <dialog id="letterDialog" class="letter-dialog" aria-labelledby="letterDialogTitle">
+    <div class="letter-paper">
+      <button class="dialog-close letter-close" id="letterClose" type="button" aria-label="Cerrar carta">×</button>
+      <p class="letter-paper-kicker">UNA CARTA PARA TI · VIII MESES</p>
+      <div class="letter-doodle" aria-hidden="true">✦ ♡ ✦</div>
+      <h2 id="letterDialogTitle">Para ti, <em id="recipientLetter">Sofia</em></h2>
+      <div id="letterParagraphs" class="letter-paragraphs"></div>
+      <p class="letter-signoff" id="letterSignoff">Con todo mi cariño,</p>
+      <p class="letter-name" id="senderLetter">Tu persona</p>
+      <div class="letter-final-stamp">08 <span>∞</span></div>
+      <div class="letter-actions"><button class="btn btn-primary" id="grandFinale" type="button">Haz brillar nuestro universo ✦</button></div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="finaleMessage" class="finale-message" aria-live="polite" hidden><span>✦</span><strong>Gracias por estos ocho meses</strong><p>Lo más bonito de esta historia es que todavía estamos escribiéndola.</p><button type="button" id="finaleDismiss">Seguir explorando</button></div>
+</body>
+</html>
